@@ -1,8 +1,11 @@
 import 'reflect-metadata'
 import { DataSource } from 'typeorm'
+
 import { Category } from './database/entity/Category'
 import { Specification } from './database/entity/Specification'
+
 import { CreateCategories1664740329592 } from './database/migration/1664740329592-CreateCategories'
+import { CreateSpecifications1664908935866 } from './database/migration/1664908935866-CreateSpecifications'
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
@@ -14,6 +17,6 @@ export const AppDataSource = new DataSource({
   synchronize: true,
   logging: false,
   entities: [Category, Specification],
-  migrations: [CreateCategories1664740329592],
+  migrations: [CreateCategories1664740329592, CreateSpecifications1664908935866],
   subscribers: [],
 })
