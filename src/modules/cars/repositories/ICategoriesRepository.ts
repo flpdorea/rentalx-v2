@@ -1,4 +1,4 @@
-import { Category } from '../../../database/entity/Category'
+import { Category } from '../../../database/entity/cars/Category'
 
 interface ICreateCategoryDTO {
     name: string,

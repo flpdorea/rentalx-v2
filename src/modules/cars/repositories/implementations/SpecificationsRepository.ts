@@ -1,6 +1,6 @@
 import { Repository } from 'typeorm'
 import { AppDataSource } from '../../../../data-source'
-import { Specification } from '../../../../database/entity/Specification'
+import { Specification } from '../../../../database/entity/cars/Specification'
 import { ICreateSpecificationDTO, ISpecificationsRepository } from '../ISpecificationsRepository'
 
 class SpecificationsRepository implements ISpecificationsRepository {
