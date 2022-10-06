@@ -1,5 +1,6 @@
 import 'reflect-metadata'
 import { DataSource } from 'typeorm'
+import { User } from './database/entity/accounts/User'
 
 import { Category } from './database/entity/cars/Category'
 import { Specification } from './database/entity/cars/Specification'
@@ -17,7 +18,7 @@ export const AppDataSource = new DataSource({
   database: 'rentalx',
   synchronize: true,
   logging: false,
-  entities: [Category, Specification],
+  entities: [Category, Specification, User],
   migrations: [
     CreateCategories1664740329592, 
     CreateSpecifications1664908935866,

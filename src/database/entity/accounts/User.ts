@@ -9,10 +9,7 @@ export class User {
     @Column()
     name: string
 
-    @Column()
-    username: string
-
-    @Column()
+    @Column({unique: true})
     email: string
 
     @Column()
@@ -21,7 +18,7 @@ export class User {
     @Column()
     driver_license: string
 
-    @Column()
+    @Column({default: false})
     isAdmin: boolean
 
     @CreateDateColumn()
