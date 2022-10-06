@@ -1,3 +1,4 @@
+import { hash } from 'bcrypt'
 import { inject, injectable } from 'tsyringe'
 import { ICreateUserDTO } from '../../dtos/ICreateUserDTO'
 import { IUsersRepositoty } from '../../repositories/IUsersRepository'
@@ -10,6 +11,13 @@ export class CreateUserUseCase {
   ) {}
 
   async execute({ name, email, password, driver_license }: ICreateUserDTO): Promise<void> {
-    await this.usersRepository.create({ name, email, password, driver_license })
+    const userAlreadyExists = await this.usersRepository.findByEmail(email)
+
+    if (userAlreadyExists) {
+      throw new Error('User already exists!')
+    }
+
+    const hashedPassword = await hash(password, 8)
+    await this.usersRepository.create({ name, email, password: hashedPassword, driver_license })
   }
 }
