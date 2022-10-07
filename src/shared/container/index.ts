@@ -6,7 +6,7 @@ import { ICategoriesRepository } from '../../modules/cars/repositories/ICategori
 import { SpecificationsRepository } from '../../modules/cars/repositories/implementations/SpecificationsRepository'
 import { ISpecificationsRepository } from '../../modules/cars/repositories/ISpecificationsRepository'
 
-import { IUsersRepositoty } from '../../modules/accounts/repositories/IUsersRepository'
+import { IUsersRepository } from '../../modules/accounts/repositories/IUsersRepository'
 import { UsersRepository } from '../../modules/accounts/repositories/implementations/UsersRepository'
 
 container.registerSingleton<ICategoriesRepository>(
@@ -19,7 +19,7 @@ container.registerSingleton<ISpecificationsRepository>(
   SpecificationsRepository
 )
 
-container.registerSingleton<IUsersRepositoty>(
+container.registerSingleton<IUsersRepository>(
   'UsersRepository',
   UsersRepository
 )
