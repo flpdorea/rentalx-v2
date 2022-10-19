@@ -10,6 +10,7 @@ Install and run RentalX by running the following commmands:
 
 ```bash
   git clone git@github.com:flpdorea/rentalx-v2.git
+  cd rentalx-v2
   docker build -t rentalx .
   docker-compose up
 ```
