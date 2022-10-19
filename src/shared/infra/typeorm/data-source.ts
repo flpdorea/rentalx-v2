@@ -1,9 +1,9 @@
 import 'reflect-metadata'
 import { DataSource } from 'typeorm'
-import { User } from './entity/accounts/User'
 
-import { Category } from './entity/cars/Category'
-import { Specification } from './entity/cars/Specification'
+import { User } from '../../../modules/accounts/infra/typeorm/entities/User'
+import { Category } from '../../../modules/cars/infra/typeorm/entities/Category'
+import { Specification } from '../../../modules/cars/infra/typeorm/entities/Specification'
 
 import { CreateCategories1664740329592 } from './migration/1664740329592-CreateCategories'
 import { CreateSpecifications1664908935866 } from './migration/1664908935866-CreateSpecifications'
